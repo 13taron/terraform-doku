@@ -1,0 +1,36 @@
+====== Installing DokuWiki ======
+
+Welcome to this guide on how to install DokuWiki! DokuWiki is a popular open-source wiki software that can be used for documentation and collaboration. Here's a step-by-step guide on how to install DokuWiki:
+
+===== Prerequisites =====
+
+Before installing DokuWiki, you need to have a web server with PHP.\\
+<code>sudo apt-get install apache2 libapache2-mod-php php-xml</code>\\
+Enable Apache Rewrite module. <code>sudo a2enmod rewrite</code>\\
+
+===== Step-by-Step Guide =====
+
+Download the latest version of DokuWiki from [[https://download.dokuwiki.org/|download.dokuwiki.org]].\\
+Extract the files to your web server's root directory.
+<code bash>
+cd /var/www
+sudo wget https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
+sudo tar xvf dokuwiki-stable.tgz
+sudo mv dokuwiki-*/ dokuwiki
+</code>
+Change permissions.<code bash>sudo chown -R www-data:www-data /var/www/dokuwiki</code>
+Change document root in Apache to point to /var/www/dokuwiki<code bash>sudo nano /etc/apache2/sites-enabled/000*.conf</code> Replace\\ ''DocumentRoot /var/www/html''\\ with\\ ''DocumentRoot /var/www/dokuwiki''
+and then reload apache2 service<code bash>sudo service apache2 reload</code>
+
+Open a web browser and navigate to your server's domain name or IP address.
+Follow the on-screen instructions to complete the installation process.
+Configure the database settings by editing the "conf/local.php" file .
+Start using DokuWiki to create and collaborate on documentation!
+Congratulations! You have successfully installed DokuWiki.
+
+===== Conclusion =====
+
+In this guide, we covered the step-by-step process of installing DokuWiki. DokuWiki is a powerful tool for creating and collaborating on documentation, and can be customized to fit your needs. Remember to keep your DokuWiki installation up-to-date and secure to prevent unauthorized access.
+
+
+
