@@ -1,8 +1,8 @@
 provider "aws" {
   #shared_credentials_file = "C:\Users\Taron\.aws\credentials"
   region                = "eu-north-1"
-  access_key            = "****************"                    
-  secret_key            = "******************"
+#  access_key            = "****************"                    
+#  secret_key            = "******************"
 }
 
 module "vpc" {
